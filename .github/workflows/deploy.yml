@@ -78,7 +78,7 @@ jobs:
         with:
           function-name: metadata-extractor
           package-type: Image  # no zip!
-          image-uri: ${{ steps.metadata-extractor-build-image.outputs.image }}  # ECR image URI from previous step
+          image-uri: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}  # ECR image URI from previous step
           role: ${{ env.AWS_LAMBDA_ROLE_ARN }}
           publish: true
 
