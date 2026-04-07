@@ -113,7 +113,7 @@ jobs:
         run: |
           cd lambda/image_validator
           
-          docker build -t $ECR_REPOSITORY
+          docker build -t $ECR_REPOSITORY .
 
           docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
